@@ -1,5 +1,5 @@
-# BasicGraphics2D
-The BasicGraphics2D library is an open source project for Java 8 that serves as a small collection of basic utilities and custom classes for stuff that is needed by a lot of AWT oriented code bases.
+# GraphicsToolkit
+The GraphicsToolkit library is an open source project for Java 8 that serves as a small collection of basic utilities and custom classes for stuff that is needed by a lot of AWT oriented code bases.
 
 This library was initially composed mostly of code that supports the EpsGraphics2D library but which is equally relevant to PDF, SVG, and other graphics file formats that may rely on AWT's Graphics2D class as a redirection of screen painting functions (invoked from the paintComponent() loop) to paper-oriented output.
 
