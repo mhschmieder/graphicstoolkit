@@ -10,3 +10,11 @@ The initial release of Version 1 will require Java 8 as the JDK/JRE target, due 
 There will be a modularized version soon, that supports Java 14+. If I find a way to make it compatible with other still-supported versions of Java (I think Java 11 is still supported by Oracle, but not Java 12 or Java 10, and maybe not Java 9 either), I will do what I can, but may have trouble finding an appropriate JDK still available to download and test against.
 
 Maven support will hopefully be added within the next day or two.
+
+This project, being one of my simplest (at the moment), is a guinea pig for some rather steep simultaneous learning curves on my own (with no help, unfortunately), so it's a bit of a baby step that hopefully will be quickly followed by the other libraries being Maven and Git ready later today or tomorrow.
+
+The one thing I wasn't certain about was whether to post Eclipse and NetBeans specific files, but as they are generic and are agnostic to the OS or the user's system details and file system structure, it seems helpful to post them in order to avoid the nasty conflicts I dealt with (although even on my own, I resolved them within a few hours of experiments, comparisons, and research) and to accelerate the integration into a user's normal IDE project workflow and build cycle.
+
+The Javadocs are 100% compliant and complete, but I am still learning how to publish those at the hosting site that I think is part of Maven Central, as it is a bad idea to bloat a GitHub project with such files and to complicate repository changes (just as with binary files and archices). Hopefully later tonight!
+
+As a confidence boost at both ends, GraphicsUtilities has a main() function that prints "Hello Maven from GraphicsToolkit" to the console (e.g. the one in Eclipse IDE). By running Maven's clean task, then the install task, you can quickly gain confidence that everything is integrated properly, by then running the main class and seeing the console and confirming that this library was the source of the validation message.
