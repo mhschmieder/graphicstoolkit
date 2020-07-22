@@ -6,6 +6,7 @@
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>GraphicsToolkit</name>
+  <url>https://github.com/mhschmieder/graphicstoolkit</url>
   <description>Utilities and custom classes for AWT based graphics.</description>
   <licenses>
     <license>
