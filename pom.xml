@@ -7,7 +7,7 @@
   <packaging>jar</packaging>
   <name>GraphicsToolkit</name>
   <url>https://github.com/mhschmieder/graphicstoolkit</url>
-  <description>Utilities and custom classes for AWT based graphics.</description>
+  <description>Utilities and custom classes for Java AWT based graphics.</description>
   <licenses>
     <license>
       <name>MIT License</name>
