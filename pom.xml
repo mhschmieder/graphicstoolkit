@@ -52,6 +52,7 @@
                         <arg>-Xlint:deprecation</arg>
                         <arg>-Xlint:unchecked</arg>
                     </compilerArgs>
+                    <encoding>${project.build.sourceEncoding}</encoding>               
                 </configuration>
             </plugin>
             <plugin>
