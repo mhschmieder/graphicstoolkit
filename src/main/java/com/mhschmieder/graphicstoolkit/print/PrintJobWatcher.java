@@ -48,7 +48,7 @@ public final class PrintJobWatcher {
     /**
      * {@code true} if it is safe to close the Print Job's Input Stream.
      */
-    protected boolean done = false;
+    protected boolean done;
 
     //////////////////////////// Constructors ////////////////////////////////
 
@@ -64,6 +64,8 @@ public final class PrintJobWatcher {
      * @since 1.0
      */
     public PrintJobWatcher( final DocPrintJob job ) {
+        done = false;
+        
         // Add a Listener to the Print Job for all relevant Print Job Events.
         job.addPrintJobListener( new PrintJobAdapter() {
 
@@ -93,6 +95,7 @@ public final class PrintJobWatcher {
             public void printJobNoMoreEvents( final PrintJobEvent pje ) {
                 allDone();
             }
+            
         } );
     }
 

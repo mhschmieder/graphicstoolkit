@@ -62,7 +62,7 @@ public class PrintableComponent implements Printable {
     /**
      * Declare Rendering Hints to use for printing.
      */
-    private RenderingHints  renderingHints = null;
+    private RenderingHints  renderingHints;
 
     //////////////////////////// Constructors ////////////////////////////////
 
