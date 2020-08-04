@@ -24,8 +24,7 @@
  * This file is part of the GraphicsToolkit Library
  *
  * You should have received a copy of the MIT License along with the
- * FxConverterToolkit Library. If not, see
- * <https://opensource.org/licenses/MIT>.
+ * GraphicsToolkit Library. If not, see <https://opensource.org/licenses/MIT>.
  *
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
