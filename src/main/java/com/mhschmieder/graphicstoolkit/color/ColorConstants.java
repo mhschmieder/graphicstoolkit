@@ -203,11 +203,25 @@ public final class ColorConstants {
                                                               new Color( 202, 202, 70 );
 
     /**
+     * Many monochromatic grays are needed by most applications; 5% Gray is
+     * often needed when providing perceptibly contrasting tones close to Black.
+     */
+    public static final Color                           GRAY05                    =
+                                                               new Color( 13, 13, 13 );
+
+    /**
      * Many monochromatic grays are needed by most applications; 10% Gray is one
      * of the eight most-used ten-percentile divisions between Black and White.
      */
     public static final Color                           GRAY10                    =
                                                                new Color( 26, 26, 26 );
+
+    /**
+     * Many monochromatic grays are needed by most applications; 15% Gray is
+     * often needed when providing perceptibly contrasting tones close to Black.
+     */
+    public static final Color                           GRAY15                    =
+                                                               new Color( 39, 39, 39 );
 
     /**
      * Many monochromatic grays are needed by most applications; 20% Gray is one
@@ -308,5 +322,17 @@ public final class ColorConstants {
      */
     public static final Color                           GRAY90                    =
                                                                new Color( 231, 231, 231 );
+
+    /**
+     * Many monochromatic grays are needed by most applications; Night Mode is
+     * quite common when needing almost-black, and is easier on the eyes.
+     */
+    public static final Color                           NIGHT_MODE                = GRAY05;
+
+    /**
+     * Many monochromatic grays are needed by most applications; Day Mode is
+     * quite common when needing almost-white, and is easier on the eyes.
+     */
+    public static final Color                           DAY_MODE                  = GRAY90;
 
 }

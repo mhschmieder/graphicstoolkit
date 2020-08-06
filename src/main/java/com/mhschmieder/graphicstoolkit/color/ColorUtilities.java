@@ -733,8 +733,8 @@ public final class ColorUtilities {
      * than 0.51 (51%), and light otherwise. This has been shown to be far more
      * successful in avoiding mid-grays from being masked, than comparing the
      * average of the RGB values against 50%, when this method is used to
-     * determine the best foreground color choice (text, graphics) for a given
-     * background color.
+     * determine the best Foreground Color choice (text, graphics) for a given
+     * Background Color.
      *
      * @param color
      *            The RGB color to use as reference for dark vs. light analysis
@@ -744,13 +744,43 @@ public final class ColorUtilities {
      * @since 1.0
      */
     public static boolean isColorDark( final Color color ) {
+        // Analyze the RGB color for dark vs. light criteria.
+        final boolean colorDark = isColorDark( color, 0.51f );
+
+        return colorDark;
+    }
+
+    /**
+     * Returns a flag for whether the supplied color should be considered dark
+     * (if {@code true}) or light (if {@code false}), based on a cutoff percent.
+     * <p>
+     * This method converts the 0-255 integer based RGB components of the
+     * supplied color to a floating-point HSB basis from 0.0 to 1.0, and then
+     * establishes that the color is dark if its brightness component is less
+     * than the provided cutoff percent, and light otherwise. This has been
+     * shown to be far more successful in avoiding mid-grays from being masked,
+     * than comparing the average of the RGB values against a cutoff value
+     * between 0.0 and 1.0, when this method is used to determine the best
+     * Foreground Color choice (text, graphics) for a given Background Color.
+     *
+     * @param color
+     *            The RGB color to use as reference for dark vs. light analysis
+     * @param brightnessCutoffPercent
+     *            The percentile for the Brightness level of the Hue Analysis,
+     *            to use as the dark vs. light cutoff criterion
+     * @return {@code true} if the supplied color should be considered dark;
+     *         {@code false} if it should be considered light
+     *
+     * @since 1.0
+     */
+    public static boolean isColorDark( final Color color, final float brightnessCutoffPercent ) {
         // Grab the raw AWT color components for R, G, and B (ignore Alpha).
         final int awtRed = color.getRed();
         final int awtGreen = color.getGreen();
         final int awtBlue = color.getBlue();
 
         // Analyze the RGB color for dark vs. light criteria.
-        final boolean colorDark = isColorDark( awtRed, awtGreen, awtBlue );
+        final boolean colorDark = isColorDark( awtRed, awtGreen, awtBlue, brightnessCutoffPercent );
 
         return colorDark;
     }
@@ -761,11 +791,12 @@ public final class ColorUtilities {
      * <p>
      * This method converts the supplied 0-255 integer based RGB values to a
      * floating-point HSB basis from 0.0 to 1.0, and then establishes that the
-     * color is dark if its brightness component is less than 0.51 (51%), and
-     * light otherwise. This has been shown to be far more successful in
-     * avoiding mid-grays from being masked, than comparing the average of the
-     * RGB values against 50%, when this method is used to determine the best
-     * foreground color choice (text, graphics) for a given background color.
+     * color is dark if its brightness component is less than the provided
+     * cutoff percent, and light otherwise. This has been shown to be far more
+     * successful in avoiding mid-grays from being masked, than comparing the
+     * average of the RGB values against a cutoff value between 0.0 and 1.0,
+     * when this method is used to determine the best Foreground Color choice
+     * (text, graphics) for a given Background Color.
      *
      * @param awtRed
      *            The Red component of the RGB color, from 0 to 255
@@ -773,12 +804,18 @@ public final class ColorUtilities {
      *            The Green component of the RGB color, from 0 to 255
      * @param awtBlue
      *            The Blue component of the RGB color, from 0 to 255
+     * @param brightnessCutoffPercent
+     *            The percentile for the Brightness level of the Hue Analysis,
+     *            to use as the dark vs. light cutoff criterion
      * @return {@code true} if the supplied color should be considered dark;
      *         {@code false} if it should be considered light
      *
      * @since 1.0
      */
-    public static boolean isColorDark( final int awtRed, final int awtGreen, final int awtBlue ) {
+    public static boolean isColorDark( final int awtRed,
+                                       final int awtGreen,
+                                       final int awtBlue,
+                                       final float brightnessCutoffPercent ) {
         // Convert from RGB to HSB and use the brightness component as a
         // trivial 51% threshold test for dark vs. light colors. It has been
         // proven that we perceive darkness based on HSB bright rather than
@@ -786,7 +823,7 @@ public final class ColorUtilities {
         // weightings to those values (something we can't do intuitively).
         final float[] hsbValues = rgbToHsb( awtRed, awtGreen, awtBlue );
         final float hsbBrightness = hsbValues[ ColorConstants.HSB_BRIGHTNESS_INDEX ];
-        final boolean colorDark = hsbBrightness <= 0.51f;
+        final boolean colorDark = hsbBrightness <= brightnessCutoffPercent;
 
         return colorDark;
     }
