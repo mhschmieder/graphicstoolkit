@@ -64,7 +64,7 @@ public final class PrintJobWatcher {
      */
     public PrintJobWatcher( final DocPrintJob job ) {
         done = false;
-        
+
         // Add a Listener to the Print Job for all relevant Print Job Events.
         job.addPrintJobListener( new PrintJobAdapter() {
 
@@ -94,7 +94,7 @@ public final class PrintJobWatcher {
             public void printJobNoMoreEvents( final PrintJobEvent pje ) {
                 allDone();
             }
-            
+
         } );
     }
 
