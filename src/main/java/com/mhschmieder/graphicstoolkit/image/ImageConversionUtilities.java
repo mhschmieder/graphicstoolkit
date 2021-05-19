@@ -58,8 +58,8 @@ import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
 
 /**
- * {@code ImageConversionUtilities} is a utility class for AWT based image
- * conversion methods that are needed in many different contexts.
+ * {@code ImageConversionUtilities} is a utility class for Graphics2D based
+ * image conversion methods that are needed in many different contexts.
  *
  * @version 1.0
  *

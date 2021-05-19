@@ -10,7 +10,7 @@
 
     <name>GraphicsToolkit</name>
     <url>https://github.com/mhschmieder/graphicstoolkit</url>
-    <description>Utilities and custom classes for Java AWT based graphics.</description>
+    <description>Utilities and custom classes for Java Graphics2D.</description>
 
     <licenses>
         <license>

@@ -30,7 +30,7 @@
  */
 /**
  * This package contains the GraphicsToolkit Library's print utility classes
- * that are dependent on AWT's print sub-packages.
+ * that are dependent on the Java Print Services API.
  *
  * @version 1.0
  *

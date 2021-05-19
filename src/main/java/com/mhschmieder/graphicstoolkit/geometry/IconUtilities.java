@@ -37,8 +37,8 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Line2D;
 
 /**
- * {@code IconUtilities} is a utility class for AWT vector based icons that are
- * common in most graphics applications, such as crosshairs of various sizes.
+ * {@code IconUtilities} is a utility class for Graphics2D vector based icons
+ * that are common in most graphics applications, such as custom crosshairs.
  *
  * @version 1.0
  *

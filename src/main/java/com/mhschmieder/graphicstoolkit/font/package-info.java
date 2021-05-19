@@ -30,7 +30,7 @@
  */
 /**
  * This package contains the GraphicsToolkit Library's font utility classes
- * that are dependent on AWT's font sub-packages.
+ * that are dependent on Graphics2D's Font sub-packages.
  *
  * @version 1.0
  *

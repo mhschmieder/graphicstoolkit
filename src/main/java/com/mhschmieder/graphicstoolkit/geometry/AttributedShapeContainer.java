@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import com.mhschmieder.graphicstoolkit.graphics.DrawMode;
 
 /**
- * {@code AttributedShapeContainer} is a container class for AWT based shapes
+ * {@code AttributedShapeContainer} is a container class for Graphics2D shapes
  * and their attributes. As with the {@link AttributedShape} class itself, the
  * scale transform is presumed to be constant and only needs to be set at
  * construction time. so there is no setter method for the scale transform.

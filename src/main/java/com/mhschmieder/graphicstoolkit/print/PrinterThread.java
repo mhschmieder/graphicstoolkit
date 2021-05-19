@@ -37,7 +37,7 @@ import javax.print.attribute.PrintRequestAttributeSet;
 
 /**
  * {@code PrinterThread} is a specialized {@link Thread} that deals with some of
- * the details of AWT printing.
+ * the details of AWT and Swing based printing.
  *
  * @version 1.0
  *

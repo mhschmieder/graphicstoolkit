@@ -35,7 +35,7 @@ import java.awt.RenderingHints;
 
 /**
  * {@code HighlightStroke} is a custom {@link BasicStroke} used for highlighting
- * on the graphics canvas in AWT; especially for indicating selected shapes.
+ * on the Graphics2D canvas; especially for indicating selected shapes.
  *
  * @version 1.0
  *

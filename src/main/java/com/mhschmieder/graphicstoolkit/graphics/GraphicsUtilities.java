@@ -44,7 +44,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * {@code GraphicsUtilities} is a utility class for AWT based graphics methods,
+ * {@code GraphicsUtilities} is a utility class for Graphics2D based methods,
  * usable in either the AWT or Swing GUI toolkits.
  *
  * @version 1.0

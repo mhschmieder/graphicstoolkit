@@ -46,9 +46,8 @@ import javax.print.attribute.PrintRequestAttributeSet;
  * {@code PostScriptUtilities} is a utility class for methods dealing with
  * standard PostScript output. Even though this writes PostScript (not
  * Encapsulated PostScript) to an Output Stream, the functionality is part of
- * the AWT Printing API and uses other parts of that API, so this functionality
- * actually does belong here rather than in a specialized PostScript exporter
- * module or package outside this custom printing package.
+ * the Print Services API, so this functionality belongs here rather than in
+ * a specialized PostScript exporter module or package.
  *
  * @version 1.0
  *

@@ -37,7 +37,7 @@ import java.awt.geom.AffineTransform;
 import com.mhschmieder.graphicstoolkit.graphics.DrawMode;
 
 /**
- * {@code AttributedShape} holds an AWT {@link Shape} alongside related
+ * {@code AttributedShape} holds a Graphics2D {@link Shape} alongside related
  * attribute information. Only the most basic attributes are modeled at this
  * time, such as pen color, Draw Mode, and the transform to apply to a shape
  * that is defined at the origin. Specialty attributes such as stroke, and

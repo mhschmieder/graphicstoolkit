@@ -43,9 +43,9 @@ import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageInputStream;
 
 /**
- * {@code ImageFormatUtilities} is a utility class for AWT based image format
- * methods that are used to query the capabilities of the JDK that this code
- * base is built against.
+ * {@code ImageFormatUtilities} is a utility class for Graphics2D based image
+ * format methods that are used to query the capabilities of the JDK that this
+ * code base is built against.
  *
  * @version 1.0
  *

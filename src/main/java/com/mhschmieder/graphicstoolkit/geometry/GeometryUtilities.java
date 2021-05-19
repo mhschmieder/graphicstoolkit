@@ -33,7 +33,7 @@ package com.mhschmieder.graphicstoolkit.geometry;
 import java.awt.geom.GeneralPath;
 
 /**
- * {@code GeometryUtilities} is a utility class for AWT based geometry methods
+ * {@code GeometryUtilities} is a utility class for Graphics2D based methods
  * that are often needed when batching large numbers of graphics primitives,
  * when it may be more efficient to append to a single {@link GeneralPath}
  * repetitively than to make large numbers of individual graphics primitives.

@@ -30,7 +30,7 @@
  */
 /**
  * This package contains the GraphicsToolkit Library's geometry utility classes
- * that are dependent on AWT's geometry sub-packages.
+ * that are dependent on the Graphics2D geometry sub-packages.
  *
  * @version 1.0
  *

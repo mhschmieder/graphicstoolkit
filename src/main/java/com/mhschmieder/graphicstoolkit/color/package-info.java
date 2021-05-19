@@ -30,7 +30,7 @@
  */
 /**
  * This package contains the GraphicsToolkit Library's color utility classes
- * that aren't dependent on AWT sub-packages.
+ * that aren't dependent on Graphics2D sub-packages.
  *
  * @version 1.0
  *
