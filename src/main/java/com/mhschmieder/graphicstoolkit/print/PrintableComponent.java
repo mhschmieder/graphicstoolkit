@@ -56,12 +56,12 @@ public class PrintableComponent implements Printable {
      * The original parent {@link Component} whose Graphics Context should be
      * redirected for printing.
      */
-    private final Component component;
+    private final Component      component;
 
     /**
      * Declare Rendering Hints to use for printing.
      */
-    private RenderingHints  renderingHints;
+    private final RenderingHints renderingHints;
 
     //////////////////////////// Constructors ////////////////////////////////
 
