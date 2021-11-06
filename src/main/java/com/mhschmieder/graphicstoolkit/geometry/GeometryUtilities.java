@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020 Mark Schmieder
+ * Copyright (c) 2020, 2021 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,6 +31,12 @@
 package com.mhschmieder.graphicstoolkit.geometry;
 
 import java.awt.geom.GeneralPath;
+
+import com.mhschmieder.commonstoolkit.math.Extents2D;
+
+import javafx.geometry.Bounds;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.shape.Rectangle;
 
 /**
  * {@code GeometryUtilities} is a utility class for Graphics2D based methods
@@ -187,6 +193,62 @@ public final class GeometryUtilities {
         }
 
         return path;
+    }
+
+    // Get an AWT rectangle, converted from generic Extents.
+    public static java.awt.geom.Rectangle2D rectangleAwtFromExtents( final Extents2D extents ) {
+        final double x = extents.getX();
+        final double y = extents.getY();
+        final double width = extents.getWidth();
+        final double height = extents.getHeight();
+        final java.awt.geom.Rectangle2D awtRectangle =
+                                                     new java.awt.geom.Rectangle2D.Double( x,
+                                                                                           y,
+                                                                                           width,
+                                                                                           height );
+        return awtRectangle;
+    }
+
+    // Get an AWT rectangle, converted from JavaFX.
+    public static java.awt.geom.Rectangle2D rectangleAwtFromRectangle( final Rectangle fxRectangle ) {
+        final double x = fxRectangle.getX();
+        final double y = fxRectangle.getY();
+        final double width = fxRectangle.getWidth();
+        final double height = fxRectangle.getHeight();
+        final java.awt.geom.Rectangle2D awtRectangle =
+                                                     new java.awt.geom.Rectangle2D.Double( x,
+                                                                                           y,
+                                                                                           width,
+                                                                                           height );
+        return awtRectangle;
+    }
+
+    // Get an AWT rectangle, converted from JavaFX.
+    public static java.awt.geom.Rectangle2D rectangleAwtFromRectangle2D( final Bounds fxBounds ) {
+        final double x = fxBounds.getMinX();
+        final double y = fxBounds.getMinY();
+        final double width = fxBounds.getWidth();
+        final double height = fxBounds.getHeight();
+        final java.awt.geom.Rectangle2D awtRectangle =
+                                                     new java.awt.geom.Rectangle2D.Double( x,
+                                                                                           y,
+                                                                                           width,
+                                                                                           height );
+        return awtRectangle;
+    }
+
+    // Get an AWT rectangle, converted from JavaFX.
+    public static java.awt.geom.Rectangle2D rectangleAwtFromRectangle2D( final Rectangle2D fxRectangle ) {
+        final double x = fxRectangle.getMinX();
+        final double y = fxRectangle.getMinY();
+        final double width = fxRectangle.getWidth();
+        final double height = fxRectangle.getHeight();
+        final java.awt.geom.Rectangle2D awtRectangle =
+                                                     new java.awt.geom.Rectangle2D.Double( x,
+                                                                                           y,
+                                                                                           width,
+                                                                                           height );
+        return awtRectangle;
     }
 
 }
