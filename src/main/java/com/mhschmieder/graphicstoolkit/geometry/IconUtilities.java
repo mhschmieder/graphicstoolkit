@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020 Mark Schmieder
+ * Copyright (c) 2020, 2022 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -109,15 +109,15 @@ public final class IconUtilities {
 
         final double targetDimension = diameter * 1.5d;
         final Line2D targetX = new Line2D.Double( -0.5d * targetDimension,
-                                                  0d,
+                                                  0.0d,
                                                   0.5d * targetDimension,
-                                                  0d );
+                                                  0.0d );
         currentShape = affineTransform.createTransformedShape( targetX );
         result.append( currentShape, false );
 
-        final Line2D targetY = new Line2D.Double( 0d,
+        final Line2D targetY = new Line2D.Double( 0.0d,
                                                   -0.5d * targetDimension,
-                                                  0d,
+                                                  0.0d,
                                                   0.5d * targetDimension );
         currentShape = affineTransform.createTransformedShape( targetY );
         result.append( currentShape, false );
