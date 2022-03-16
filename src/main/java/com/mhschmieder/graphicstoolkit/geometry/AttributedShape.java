@@ -34,7 +34,7 @@ import java.awt.Color;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 
-import com.mhschmieder.graphicstoolkit.graphics.DrawMode;
+import com.mhschmieder.graphicstoolkit.DrawMode;
 
 /**
  * {@code AttributedShape} holds a Graphics2D {@link Shape} alongside related

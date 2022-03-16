@@ -39,7 +39,7 @@ import java.awt.print.Printable;
 
 import javax.swing.JComponent;
 
-import com.mhschmieder.graphicstoolkit.graphics.GraphicsUtilities;
+import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
 
 /**
  * {@code PrintableComponent} is a convenient class for wrapping an AWT

@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
-package com.mhschmieder.graphicstoolkit.graphics;
+package com.mhschmieder.graphicstoolkit.render;
 
 import java.awt.BasicStroke;
 import java.awt.RenderingHints;

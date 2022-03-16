@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
-package com.mhschmieder.graphicstoolkit.graphics;
+package com.mhschmieder.graphicstoolkit;
 
 import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;

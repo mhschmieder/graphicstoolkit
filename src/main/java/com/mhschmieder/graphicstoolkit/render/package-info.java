@@ -30,10 +30,10 @@
  */
 /**
  * This package contains the GraphicsToolkit Library's graphics utility classes
- * that aren't dependent on AWT sub-packages.
+ * that are focused on rendering facilities.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.graphicstoolkit.graphics;
+package com.mhschmieder.graphicstoolkit.render;
