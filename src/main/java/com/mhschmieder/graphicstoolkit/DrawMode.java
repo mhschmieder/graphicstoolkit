@@ -75,16 +75,16 @@ public enum DrawMode {
      * auto-conversion policies for enum values to strings over the years;
      * especially regarding special characters such as underscores).
      *
-     * @param canonicalDrawMode
+     * @param drawModeCanonicalString
      *            The canonical string representation of a valid Draw Mode
      *
      * @return The Draw Mode that corresponds to the canonical string
      *
      * @since 1.0
      */
-    public static DrawMode canonicalValueOf( final String canonicalDrawMode ) {
-        return ( canonicalDrawMode != null )
-            ? valueOf( canonicalDrawMode.toUpperCase( Locale.ENGLISH ) )
+    public static DrawMode fromCanonicalString( final String drawModeCanonicalString ) {
+        return ( drawModeCanonicalString != null )
+            ? valueOf( drawModeCanonicalString.toUpperCase( Locale.ENGLISH ) )
             : defaultValue();
     }
 
