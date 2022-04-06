@@ -40,7 +40,7 @@ public final class UndoableActionUtilities {
      */
     private UndoableActionUtilities() {}
 
-   @SuppressWarnings("nls")
+    @SuppressWarnings("nls")
     public static String getUndoableActionPresentationName( final String undoableActionName,
                                                             final ResourceBundle resourceBundle ) {
         // Each undoable action must have an action name in order to find its

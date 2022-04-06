@@ -45,7 +45,7 @@ public final class UndoableActionFactory {
      */
     private UndoableActionFactory() {}
 
-   @SuppressWarnings("nls") public static final String BUNDLE_NAME =
+    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
                                                                     "com.mhschmieder.graphicstoolkit.undo.UndoableActions";
 
     public static StateEdit getUndoableActionInstance( final StateEditable editableObject,
