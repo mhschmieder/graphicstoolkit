@@ -39,7 +39,7 @@ import java.awt.image.BufferedImage;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 
-import com.mhschmieder.graphicstoolkit.text.TextUtilities;
+import com.mhschmieder.graphicstoolkit.text.AttributedTextUtilities;
 
 /**
  * {@code FontUtilities} is a utility class for methods related to fonts, such
@@ -126,7 +126,7 @@ public final class FontUtilities {
     public static AttributedCharacterIterator getAttributeCharacterIterator( final String str,
                                                                              final Font font ) {
         final AttributedString attributedString = new AttributedString( str );
-        TextUtilities.copyTextAttributes( font, attributedString, 0, str.length() );
+        AttributedTextUtilities.copyTextAttributes( font, attributedString, 0, str.length() );
         final AttributedCharacterIterator attributedCharacterIterator = attributedString
                 .getIterator();
         return attributedCharacterIterator;

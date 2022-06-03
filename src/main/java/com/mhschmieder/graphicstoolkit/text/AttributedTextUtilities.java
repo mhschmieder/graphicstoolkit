@@ -40,20 +40,20 @@ import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
 
 /**
- * {@code TextUtilities} is a utility class for methods related to text, such
- * as copying Text Attributes for purposes of rendering text directly vs.
- * writing strings to output formats and being dependent on installed fonts.
+ * {@code AttributedTextUtilities} is a utility class for methods related to
+ * text, such as copying Text Attributes for purposes of rendering text directly
+ * vs. writing strings to output formats and being dependent on installed fonts.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-public final class TextUtilities {
+public final class AttributedTextUtilities {
 
     /**
      * The default constructor is disabled, as this is a static utilities class.
      */
-    private TextUtilities() {}
+    private AttributedTextUtilities() {}
 
     /**
      * Copies Text Attributes from the supplied {@link Font} to the supplied
