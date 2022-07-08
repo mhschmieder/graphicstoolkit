@@ -28,7 +28,7 @@
  *
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
-package com.mhschmieder.graphicstoolkit.geometry;
+package com.mhschmieder.graphicstoolkit.shape;
 
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;

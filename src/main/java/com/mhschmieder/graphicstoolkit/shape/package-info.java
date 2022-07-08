@@ -29,11 +29,10 @@
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
 /**
- * This package contains the GraphicsToolkit Library's geometry utility classes
- * that are dependent on the Graphics2D geometry sub-packages.
+ * This package contains the GraphicsToolkit Library's shape functionality.
  *
  * @version 1.0
  *
  * @author Mark Schmieder
  */
-package com.mhschmieder.graphicstoolkit.geometry;
+package com.mhschmieder.graphicstoolkit.shape;

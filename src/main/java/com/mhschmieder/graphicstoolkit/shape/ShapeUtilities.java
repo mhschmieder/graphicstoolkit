@@ -28,12 +28,12 @@
  *
  * Project: https://github.com/mhschmieder/graphicstoolkit
  */
-package com.mhschmieder.graphicstoolkit.geometry;
+package com.mhschmieder.graphicstoolkit.shape;
 
 import java.awt.geom.GeneralPath;
 
 /**
- * {@code GeometryUtilities} is a utility class for Graphics2D based methods
+ * {@code ShapeUtilities} is a utility class for Graphics2D based methods
  * that are often needed when batching large numbers of graphics primitives,
  * when it may be more efficient to append to a single {@link GeneralPath}
  * repetitively than to make large numbers of individual graphics primitives.
@@ -42,12 +42,12 @@ import java.awt.geom.GeneralPath;
  *
  * @author Mark Schmieder
  */
-public final class GeometryUtilities {
+public final class ShapeUtilities {
 
     /**
      * The default constructor is disabled, as this is a static utilities class.
      */
-    private GeometryUtilities() {}
+    private ShapeUtilities() {}
 
     /**
      * Returns an integer-based polyline represented as a {@link GeneralPath},
