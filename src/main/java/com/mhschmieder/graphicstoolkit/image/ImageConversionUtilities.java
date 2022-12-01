@@ -185,6 +185,8 @@ public final class ImageConversionUtilities {
     @SuppressWarnings("nls")
     public static BufferedImage swapImageType( final BufferedImage bufferedImage,
                                                final String imageFormatName ) {
+        BufferedImage convertedImage = bufferedImage;
+        
         // There is a known bug in Oracle's code, so we do the recommended
         // workaround to replace the incorrect Image Type that their utility
         // method sets for JPEG and BMP (the latter won't output).
@@ -206,17 +208,20 @@ public final class ImageConversionUtilities {
         switch ( imageFormatNameCaseInsensitive ) {
         case "jpg":
         case "bmp":
-            final BufferedImage componentColorImage = new BufferedImage( bufferedImage
-                    .getWidth(), bufferedImage.getHeight(), BufferedImage.TYPE_3BYTE_BGR );
-            op.filter( bufferedImage, componentColorImage );
-            return componentColorImage;
+            // Make a Component Color Image.
+            convertedImage = new BufferedImage( bufferedImage.getWidth(),
+                                                bufferedImage.getHeight(), 
+                                                BufferedImage.TYPE_3BYTE_BGR );
+            op.filter( bufferedImage, convertedImage );
+            break;
         case "tiff":
         case "tif":
-            final BufferedImage directColorImage = new BufferedImage( bufferedImage.getWidth(),
-                                                                      bufferedImage.getHeight(),
-                                                                      BufferedImage.TYPE_INT_RGB );
-            op.filter( bufferedImage, directColorImage );
-            return directColorImage;
+            // Make a Direct Color Image.
+            convertedImage = new BufferedImage( bufferedImage.getWidth(),
+                                                bufferedImage.getHeight(),
+                                                BufferedImage.TYPE_INT_RGB );
+            op.filter( bufferedImage, convertedImage );
+            break;
         default:
             break;
         }
