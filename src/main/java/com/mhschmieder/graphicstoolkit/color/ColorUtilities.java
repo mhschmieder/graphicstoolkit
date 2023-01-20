@@ -48,6 +48,92 @@ public final class ColorUtilities {
      */
     private ColorUtilities() {}
 
+    /////////////// Color packers for combined ARGB integer values /////////////
+
+    /**
+     * Returns an integer representing a packed ARGB color that is opaque.
+     * 
+     * @param red
+     *            The red component to merge into the packed color
+     * @param green
+     *            The green component to merge into the packed color
+     * @param blue
+     *            The blue component to merge into the packed color
+     * @return An integer representing a packed ARGB color
+     */
+    public static int makePackedColor( final int red, final int green, final int blue ) {
+        // Make a packed ARGB color that has no alpha transparency.
+        final int packedColor = makePackedColor( red, green, blue, 0 );
+        return packedColor;
+    }
+
+    /**
+     * Returns an integer representing a packed ARGB color.
+     * 
+     * @param red
+     *            The red component to merge into the packed color
+     * @param green
+     *            The green component to merge into the packed color
+     * @param blue
+     *            The blue component to merge into the packed color
+     * @param alpha
+     *            The alpha transparency to apply to the packed color
+     * @return An integer representing a packed ARGB color
+     */
+    public static int makePackedColor( final int red,
+                                       final int green,
+                                       final int blue,
+                                       final int alpha ) {
+        final int packedColor = ( ( alpha & 0xff ) << 24 ) | ( ( red & 0xff ) << 16 )
+                | ( ( green & 0xff ) << 8 ) | ( blue & 0xff );
+        return packedColor;
+    }
+
+    /**
+     * Returns the red component of a packed ARGB integer.
+     * 
+     * @param packedColor
+     *            The integer representing a packed ARGB color
+     * @return The red component of the packed ARGB integer
+     */
+    public static int getRed( final int packedColor ) {
+        return ( ( packedColor >> 16 ) & 0xff );
+    }
+
+
+    /**
+     * Returns the green component of a packed ARGB integer.
+     * 
+     * @param packedColor
+     *            The integer representing a packed ARGB color
+     * @return The green component of the packed ARGB integer
+     */
+    public static int getGreen( final int packedColor ) {
+        return ( ( packedColor >> 8 ) & 0xff );
+    }
+
+    /**
+     * Returns the blue component of a packed ARGB integer.
+     * 
+     * @param packedColor
+     *            The integer representing a packed ARGB color
+     * @return The blue component of the packed ARGB integer
+     */
+    public static int getBlue( final int packedColor ) {
+        return ( packedColor & 0xff );
+    }
+
+    /**
+     * Returns the alpha transparency value of a packed ARGB integer.
+     * 
+     * @param packedColor
+     *            The integer representing a packed ARGB color
+     * @return The alpha transparency value of the packed ARGB integer
+     */
+    public static int getAlpha( final int packedColor ) {
+        return ( ( packedColor >> 24 ) & 0xff );
+    }
+
     /////////////// Color converters for hexadecimal string output /////////////
 
     /**
