@@ -57,6 +57,8 @@ import javax.imageio.ImageWriteParam;
 import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
 
+import org.apache.commons.math3.util.FastMath;
+
 /**
  * {@code ImageConversionUtilities} is a utility class for Graphics2D based
  * image conversion methods that are needed in many different contexts.
@@ -477,21 +479,21 @@ public final class ImageConversionUtilities {
             if ( componentAspectRatio >= pixelAspectRatio ) {
                 if ( pixelWidth >= pixelHeight ) {
                     imageWidth = pixelWidth;
-                    imageHeight = ( int ) Math.round( pixelWidth / componentAspectRatio );
+                    imageHeight = ( int ) FastMath.round( pixelWidth / componentAspectRatio );
                 }
                 else {
-                    imageWidth = ( int ) Math.round( pixelHeight * componentAspectRatio );
+                    imageWidth = ( int ) FastMath.round( pixelHeight * componentAspectRatio );
                     imageHeight = pixelHeight;
                 }
             }
             else {
                 if ( pixelWidth >= pixelHeight ) {
-                    imageWidth = ( int ) Math.round( pixelHeight * componentAspectRatio );
+                    imageWidth = ( int ) FastMath.round( pixelHeight * componentAspectRatio );
                     imageHeight = pixelHeight;
                 }
                 else {
                     imageWidth = pixelWidth;
-                    imageHeight = ( int ) Math.round( pixelWidth / componentAspectRatio );
+                    imageHeight = ( int ) FastMath.round( pixelWidth / componentAspectRatio );
                 }
             }
         }
@@ -511,8 +513,8 @@ public final class ImageConversionUtilities {
         g2.dispose();
 
         // Set up the scaled Buffered Image metrics for the Component.
-        BufferedImage scaledImage = new BufferedImage( ( int ) Math.round( imageWidth ),
-                                                       ( int ) Math.round( imageHeight ),
+        BufferedImage scaledImage = new BufferedImage( ( int ) FastMath.round( imageWidth ),
+                                                       ( int ) FastMath.round( imageHeight ),
                                                        imageType );
 
         // Scale the image using bilinear interpolation, so that text labels are

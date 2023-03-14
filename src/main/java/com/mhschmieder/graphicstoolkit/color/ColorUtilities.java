@@ -32,6 +32,8 @@ package com.mhschmieder.graphicstoolkit.color;
 
 import java.awt.Color;
 
+import org.apache.commons.math3.util.FastMath;
+
 /**
  * {@code ColorUtilities} is a utility class for methods related to color
  * handling, such as determining foreground from background, classifying light
@@ -198,10 +200,10 @@ public final class ColorUtilities {
     private static String colorComponentToHexString( final float colorComponentPercentage ) {
         // Get the floating-point value back into integer space, from 0 to 255,
         // as that is what is needed for the hexadecimal conversion.
-        final int colorComponentValue = Math.round( colorComponentPercentage * 255 );
+        final int colorComponentValue = FastMath.round( colorComponentPercentage * 255 );
 
         // Avoid overflow beyond the allowed integer range.
-        final int colorComponentValueAdjusted = Math.min( colorComponentValue, 255 );
+        final int colorComponentValueAdjusted = FastMath.min( colorComponentValue, 255 );
 
         // Convert this integer to a two-character hexadecimal strings.
         final String colorComponentHexValue =
@@ -640,7 +642,7 @@ public final class ColorUtilities {
         final float grayValue = ( 0.2989f * rgbRed ) + ( 0.587f * rgbGreen ) + ( 0.114f * rgbBlue );
 
         // Avoid overflow beyond the allowed floating-point range.
-        final float grayValueAdjusted = Math.min( grayValue, 1.0f );
+        final float grayValueAdjusted = FastMath.min( grayValue, 1.0f );
 
         return grayValueAdjusted;
     }
@@ -789,10 +791,10 @@ public final class ColorUtilities {
                                      final float rgbBlue ) {
         // This is the standard formula for computing the CMYK Black component
         // from the maximum value of the RGB color's individual color channels.
-        final float cmykBlack = 1f - Math.max( Math.max( rgbRed, rgbGreen ), rgbBlue );
+        final float cmykBlack = 1f - FastMath.max( FastMath.max( rgbRed, rgbGreen ), rgbBlue );
 
         // Prevent divide-by-zero, as well as negative CMYK values.
-        final float denominator = Math.max( Float.MIN_NORMAL, 1f - cmykBlack );
+        final float denominator = FastMath.max( Float.MIN_NORMAL, 1f - cmykBlack );
 
         final float cmykCyan = 1f - ( rgbRed / denominator );
         final float cmykMagenta = 1f - ( rgbGreen / denominator );

@@ -33,6 +33,8 @@ package com.mhschmieder.graphicstoolkit.render;
 import java.awt.BasicStroke;
 import java.awt.RenderingHints;
 
+import org.apache.commons.math3.util.FastMath;
+
 /**
  * {@code HighlightStroke} is a custom {@link BasicStroke} used for highlighting
  * on the Graphics2D canvas; especially for indicating selected shapes.
@@ -73,7 +75,7 @@ public final class HighlightStroke extends BasicStroke {
      * @version 1.0
      */
     public HighlightStroke( final BasicStroke basicStroke ) {
-        super( Math.max( basicStroke.getLineWidth(), 1.01f ),
+        super( FastMath.max( basicStroke.getLineWidth(), 1.01f ),
                BasicStroke.CAP_BUTT,
                BasicStroke.JOIN_MITER,
                basicStroke.getMiterLimit(),

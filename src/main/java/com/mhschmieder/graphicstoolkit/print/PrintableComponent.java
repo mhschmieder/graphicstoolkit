@@ -39,6 +39,8 @@ import java.awt.print.Printable;
 
 import javax.swing.JComponent;
 
+import org.apache.commons.math3.util.FastMath;
+
 import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
 
 /**
@@ -125,7 +127,7 @@ public class PrintableComponent implements Printable {
         // Make sure the entire component fits on the page, at maximum fit.
         final double pageWidth = pageFormat.getImageableWidth();
         final double pageHeight = pageFormat.getImageableHeight();
-        final double scale = Math.min( ( pageWidth / component.getWidth() ),
+        final double scale = FastMath.min( ( pageWidth / component.getWidth() ),
                                        ( pageHeight / component.getHeight() ) );
         g2.scale( scale, scale );
 

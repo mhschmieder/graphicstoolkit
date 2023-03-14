@@ -43,6 +43,8 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.commons.math3.util.FastMath;
+
 /**
  * {@code GraphicsUtilities} is a utility class for Graphics2D based methods,
  * usable in either the AWT or Swing GUI toolkits.
@@ -115,7 +117,7 @@ public final class GraphicsUtilities {
         // distorting (stretching) of either dimension.
         final float scaleWidth = destinationWidth / sourceWidth;
         final float scaleHeight = destinationHeight / sourceHeight;
-        float scaleFactor = Math.min( scaleHeight, scaleWidth );
+        float scaleFactor = FastMath.min( scaleHeight, scaleWidth );
 
         // Calculate new dimensions based on the most inclusive scale factor.
         final float newWidth = sourceWidth * scaleFactor;
@@ -173,7 +175,7 @@ public final class GraphicsUtilities {
         // distorting (stretching) of either dimension.
         final double scaleWidth = destinationWidth / sourceWidth;
         final double scaleHeight = destinationHeight / sourceHeight;
-        double scaleFactor = Math.min( scaleHeight, scaleWidth );
+        double scaleFactor = FastMath.min( scaleHeight, scaleWidth );
 
         // Calculate new dimensions based on the most inclusive scale factor.
         final double newWidth = sourceWidth * scaleFactor;
@@ -232,8 +234,8 @@ public final class GraphicsUtilities {
                                                           final double destinationWidth,
                                                           final double destinationHeight ) {
         // Calculate the source dimensions from the original mix/max values.
-        final double sourceWidth = Math.abs( sourceMaxX - sourceMinX );
-        final double sourceHeight = Math.abs( sourceMaxY - sourceMinY );
+        final double sourceWidth = FastMath.abs( sourceMaxX - sourceMinX );
+        final double sourceHeight = FastMath.abs( sourceMaxY - sourceMinY );
 
         // Calculate the scale factor of the source layout to the destination,
         // in such a way that neither dimension is clipped nor distorted.
