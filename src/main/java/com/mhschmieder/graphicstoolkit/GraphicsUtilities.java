@@ -402,7 +402,7 @@ public final class GraphicsUtilities {
         renderingHintMap.put( RenderingHints.KEY_FRACTIONALMETRICS,
                               RenderingHints.VALUE_FRACTIONALMETRICS_ON );
         renderingHintMap.put( RenderingHints.KEY_INTERPOLATION,
-                              RenderingHints.VALUE_INTERPOLATION_BICUBIC );
+                              RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR );
         renderingHintMap.put( RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY );
         renderingHintMap.put( RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE );
         renderingHintMap.put( RenderingHints.KEY_TEXT_ANTIALIASING,
