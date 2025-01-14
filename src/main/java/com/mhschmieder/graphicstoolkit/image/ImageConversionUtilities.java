@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2023 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,9 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.awt.image.ColorConvertOp;
 import java.awt.image.ColorModel;
+import java.awt.image.DataBufferInt;
 import java.awt.image.PixelGrabber;
+import java.awt.image.Raster;
 import java.awt.image.RenderedImage;
 import java.awt.image.WritableRaster;
 import java.io.BufferedOutputStream;
@@ -120,8 +122,8 @@ public final class ImageConversionUtilities {
     }
 
     /**
-     * This method takes an {@link Image} and converts it to a two-dimensional
-     * array of integer-based pixels, which is the format that PostScript needs
+     * Returns a two-dimensional array of integer-based pixels grabbed from
+     * the supplied {@link Image}, using the format that PostScript needs
      * for images. Depending on the parameters, this might not be the full
      * image, as image cropping is supported by the {@link PixelGrabber}.
      *
@@ -168,6 +170,39 @@ public final class ImageConversionUtilities {
         }
 
         return pixels;
+    }
+
+    /**
+     * Returns a {@link BufferedImage} created as a packed raster using the
+     * supplied two-dimensional array of integer-based pixels and applying
+     * the standard default RGB Color Model with proper ARGB Band Masks.
+     * 
+     * @param pixels The two-dimensional integer-based array of pixels
+     * @param width The width (number of columns per row) to use for reading
+     *              the one-dimensional array as a two-dimensional value set
+     * @param height The height (number of pixels per column) to hint the 
+     *               packed raster utility for converting to a BufferedImage.
+     * @return a {@link BufferedImage} in ARGB color space as a packed raster
+     */
+    public static BufferedImage createBufferedImage( final int[] pixels,
+                                                     final int width,
+                                                     final int height ) {
+        // NOTE: Although referred to as ARGB, the actual order of the masks
+        //  when consumed by the Raster utility is { R, G, B, A }.
+        final int[] bandMasks = {
+                0xFF0000, 0xFF00, 0xFF, 0xFF000000
+        };
+
+        final DataBufferInt buffer = new DataBufferInt( pixels, pixels.length );
+        final WritableRaster raster = Raster.createPackedRaster( buffer,
+                                                                 width,
+                                                                 height,
+                                                                 width,
+                                                                 bandMasks,
+                                                                 null );
+        
+        final ColorModel cm = ColorModel.getRGBdefault();
+        return new BufferedImage( cm, raster, cm.isAlphaPremultiplied(), null );
     }
 
     /**
