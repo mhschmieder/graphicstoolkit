@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,7 @@
  */
 package com.mhschmieder.graphicstoolkit.shape;
 
+import java.awt.Graphics;
 import java.awt.geom.GeneralPath;
 
 /**
@@ -48,6 +49,50 @@ public final class ShapeUtilities {
      * The default constructor is disabled, as this is a static utilities class.
      */
     private ShapeUtilities() {}
+
+    /**
+     * Draws an Arrow on the given graphics canvas.
+     * <p>
+     * NOTE: To clarify, the provided percent is presumed to have already been
+     *  converted from the { 0, 100 } range to a decimal number between zero and
+     *  one that is ready as a multiplier.
+     *
+     * @param g the Graphics context to use as the canvas
+     * @param startX the point-end of the arrow, x-coordinate
+     * @param startY the point-end of the arrow, y-coordinate
+     * @param endX the head end of the arrow, x-coordinate
+     * @param endY the head end of the arrow, y-coordinate
+     * @param headDecimalPercent the decimal percent by which to multiply the
+     *                           arrow length, to determine the head length
+     */
+    public static void drawArrow( final Graphics g,
+                                  final int startX,
+                                  final int startY,
+                                  final int endX,
+                                  final int endY,
+                                  final double headDecimalPercent ) {
+        final double xDiff = endX - startX;
+        final double yDiff = endY - startY;
+
+        final int xArrowButt = endX - ( int ) ( xDiff * headDecimalPercent );
+        final int yArrowButt = endY - ( int ) ( yDiff * headDecimalPercent );
+
+        final int[] arrowHeadX = new int[ 3 ];
+        final int[] arrowHeadY = new int[ 3 ];
+
+        arrowHeadX[ 0 ] = endX;
+        arrowHeadY[ 0 ] = endY;
+
+        arrowHeadX[ 1 ] = xArrowButt - ( int ) ( ( yDiff / 2 ) * headDecimalPercent );
+        arrowHeadY[ 1 ] = yArrowButt + ( int ) ( ( xDiff / 2 ) * headDecimalPercent );
+
+        arrowHeadX[ 2 ] = xArrowButt + ( int ) ( ( yDiff / 2 ) * headDecimalPercent );
+        arrowHeadY[ 2 ] = yArrowButt - ( int ) ( ( xDiff / 2 ) * headDecimalPercent );
+
+        g.fillPolygon( arrowHeadX, arrowHeadY, 3 );
+
+        g.drawLine( startX, startY, endX, endY );
+    }
 
     /**
      * Returns an integer-based polyline represented as a {@link GeneralPath},

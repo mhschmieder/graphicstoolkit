@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,7 +37,9 @@ import org.apache.commons.math3.util.FastMath;
 /**
  * {@code ColorUtilities} is a utility class for methods related to color
  * handling, such as determining foreground from background, classifying light
- * vs. dark colors, and converting between color modes or numeric resolutions.
+ * vs. dark colors, and converting between color modes or numeric resolutions, 
+ * as well as methods dealing with raw pixels as integers, for color manipulation
+ * in any Java-based graphics toolkit.
  *
  * @version 1.0
  *
@@ -134,6 +136,34 @@ public final class ColorUtilities {
      */
     public static int getAlpha( final int packedColor ) {
         return ( ( packedColor >> 24 ) & 0xff );
+    }
+    
+    /////////////// Utility methods for combined ARGB integer values /////////////
+
+
+    /**
+     * Returns a pixel dimmed by the provided decimal percent value.
+     * <p>
+     * NOTE: To clarify, the provided percent is presumed to have already been
+     *  converted from the { 0, 100 } range to a decimal number between zero and
+     *  one that is ready as a multiplier.
+     *
+     * @param pixel the original pixel to be dimmed
+     * @param dimDecimalPercent the decimal percent of dimming to apply to the 
+     *                          provided pixel
+     * @return a pixel dimmed by the provided decimal percent value
+     */
+    public static int dimPixel( final int pixel,
+                                final double dimDecimalPercent ) {
+        int r = ( pixel >> 16 ) & 0xff;
+        int g = ( pixel >> 8 ) & 0xff;
+        int b = ( pixel ) & 0xff;
+
+        r = r + ( int ) FastMath.floor( ( 255 - r ) * dimDecimalPercent );
+        g = g + ( int ) FastMath.floor( ( 255 - g ) * dimDecimalPercent );
+        b = b + ( int ) FastMath.floor( ( 255 - b ) * dimDecimalPercent );
+
+        return ( ( r & 0xff ) << 16 ) | ( ( g & 0xff ) << 8 ) | ( b & 0xff );
     }
 
     /////////////// Color converters for hexadecimal string output /////////////
@@ -943,5 +973,4 @@ public final class ColorUtilities {
 
         return foreColor;
     }
-
 }

@@ -1,7 +1,7 @@
 /**
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -70,7 +70,7 @@ public final class GraphicsUtilities {
      * @since 1.0
      */
     public static void main( final String[] args ) {
-        System.out.println( "Hello Maven from GraphicsToolkit!" ); //$NON-NLS-1$
+        System.out.println( "Hello Maven from GraphicsToolkit!" );
     }
 
     /**
@@ -485,5 +485,4 @@ public final class GraphicsUtilities {
 
         return renderingHints;
     }
-
 }
