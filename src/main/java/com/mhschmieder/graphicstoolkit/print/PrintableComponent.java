@@ -30,18 +30,16 @@
  */
 package com.mhschmieder.graphicstoolkit.print;
 
+import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
+import org.apache.commons.math3.util.FastMath;
+
+import javax.swing.JComponent;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
-
-import javax.swing.JComponent;
-
-import org.apache.commons.math3.util.FastMath;
-
-import com.mhschmieder.graphicstoolkit.GraphicsUtilities;
 
 /**
  * {@code PrintableComponent} is a convenient class for wrapping an AWT

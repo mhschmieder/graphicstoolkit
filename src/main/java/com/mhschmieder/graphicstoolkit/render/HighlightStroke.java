@@ -30,10 +30,10 @@
  */
 package com.mhschmieder.graphicstoolkit.render;
 
+import org.apache.commons.math3.util.FastMath;
+
 import java.awt.BasicStroke;
 import java.awt.RenderingHints;
-
-import org.apache.commons.math3.util.FastMath;
 
 /**
  * {@code HighlightStroke} is a custom {@link BasicStroke} used for highlighting

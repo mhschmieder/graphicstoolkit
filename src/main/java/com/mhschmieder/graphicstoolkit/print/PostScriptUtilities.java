@@ -30,9 +30,6 @@
  */
 package com.mhschmieder.graphicstoolkit.print;
 
-import java.awt.Component;
-import java.io.OutputStream;
-
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
@@ -41,6 +38,8 @@ import javax.print.SimpleDoc;
 import javax.print.StreamPrintService;
 import javax.print.StreamPrintServiceFactory;
 import javax.print.attribute.PrintRequestAttributeSet;
+import java.awt.Component;
+import java.io.OutputStream;
 
 /**
  * {@code PostScriptUtilities} is a utility class for methods dealing with

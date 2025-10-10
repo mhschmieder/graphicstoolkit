@@ -30,6 +30,13 @@
  */
 package com.mhschmieder.graphicstoolkit.image;
 
+import org.apache.commons.math3.util.FastMath;
+
+import javax.imageio.IIOImage;
+import javax.imageio.ImageIO;
+import javax.imageio.ImageWriteParam;
+import javax.imageio.ImageWriter;
+import javax.imageio.stream.ImageOutputStream;
 import java.awt.Component;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -52,14 +59,6 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.NoSuchElementException;
-
-import javax.imageio.IIOImage;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.stream.ImageOutputStream;
-
-import org.apache.commons.math3.util.FastMath;
 
 /**
  * {@code ImageConversionUtilities} is a utility class for Graphics2D based

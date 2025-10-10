@@ -30,13 +30,12 @@
  */
 package com.mhschmieder.graphicstoolkit.undo;
 
-import java.util.ResourceBundle;
+import com.mhschmieder.commonstoolkit.util.ClientProperties;
+import com.mhschmieder.commonstoolkit.util.GlobalUtilities;
 
 import javax.swing.undo.StateEdit;
 import javax.swing.undo.StateEditable;
-
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.commonstoolkit.util.GlobalUtilities;
+import java.util.ResourceBundle;
 
 public final class UndoableActionFactory {
 

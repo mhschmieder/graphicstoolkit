@@ -30,9 +30,8 @@
  */
 package com.mhschmieder.graphicstoolkit.print;
 
-import java.awt.Component;
-
 import javax.swing.JComponent;
+import java.awt.Component;
 
 /**
  * {@code PrintUtilities} is a utility class for methods dealing with printing.

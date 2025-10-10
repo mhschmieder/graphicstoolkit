@@ -30,10 +30,9 @@
  */
 package com.mhschmieder.graphicstoolkit.print;
 
+import javax.print.attribute.PrintRequestAttributeSet;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
-
-import javax.print.attribute.PrintRequestAttributeSet;
 
 /**
  * {@code PrinterThread} is a specialized {@link Thread} that deals with some of

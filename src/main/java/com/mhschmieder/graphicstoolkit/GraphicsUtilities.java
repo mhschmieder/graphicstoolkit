@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.graphicstoolkit;
 
+import org.apache.commons.math3.util.FastMath;
+
 import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
@@ -42,8 +44,6 @@ import java.awt.geom.NoninvertibleTransformException;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
-
-import org.apache.commons.math3.util.FastMath;
 
 /**
  * {@code GraphicsUtilities} is a utility class for Graphics2D based methods,

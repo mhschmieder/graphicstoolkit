@@ -30,12 +30,12 @@
  */
 package com.mhschmieder.graphicstoolkit.shape;
 
+import com.mhschmieder.graphicstoolkit.DrawMode;
+
 import java.awt.Color;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
-
-import com.mhschmieder.graphicstoolkit.DrawMode;
 
 /**
  * {@code AttributedShapeContainer} is a container class for Graphics2D shapes

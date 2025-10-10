@@ -30,9 +30,9 @@
  */
 package com.mhschmieder.graphicstoolkit.color;
 
-import java.awt.Color;
-
 import org.apache.commons.math3.util.FastMath;
+
+import java.awt.Color;
 
 /**
  * {@code ColorUtilities} is a utility class for methods related to color

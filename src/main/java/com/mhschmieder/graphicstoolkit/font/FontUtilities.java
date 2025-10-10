@@ -30,6 +30,8 @@
  */
 package com.mhschmieder.graphicstoolkit.font;
 
+import com.mhschmieder.graphicstoolkit.text.AttributedTextUtilities;
+
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -38,8 +40,6 @@ import java.awt.font.FontRenderContext;
 import java.awt.image.BufferedImage;
 import java.text.AttributedCharacterIterator;
 import java.text.AttributedString;
-
-import com.mhschmieder.graphicstoolkit.text.AttributedTextUtilities;
 
 /**
  * {@code FontUtilities} is a utility class for methods related to fonts, such
