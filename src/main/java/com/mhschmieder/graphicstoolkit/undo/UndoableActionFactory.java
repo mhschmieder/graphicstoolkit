@@ -1,7 +1,7 @@
-/**
+/*
  * MIT License
  *
- * Copyright (c) 2020, 2022 Mark Schmieder
+ * Copyright (c) 2020, 2025 Mark Schmieder
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -44,8 +44,8 @@ public final class UndoableActionFactory {
      */
     private UndoableActionFactory() {}
 
-    @SuppressWarnings("nls") public static final String BUNDLE_NAME =
-                                                                    "com.mhschmieder.graphicstoolkit.undo.UndoableActions";
+    // NOTE: We must substitute "." for resource directory tree delimiters.
+    public static final String BUNDLE_NAME = "properties.UndoableActions";
 
     public static StateEdit getUndoableActionInstance( final StateEditable editableObject,
                                                        final String undoableActionName,
