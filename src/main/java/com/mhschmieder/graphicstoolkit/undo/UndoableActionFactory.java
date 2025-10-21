@@ -30,8 +30,8 @@
  */
 package com.mhschmieder.graphicstoolkit.undo;
 
-import com.mhschmieder.commonstoolkit.util.ClientProperties;
-import com.mhschmieder.commonstoolkit.util.GlobalUtilities;
+import com.mhschmieder.jcommons.util.ClientProperties;
+import com.mhschmieder.jcommons.util.GlobalUtilities;
 
 import javax.swing.undo.StateEdit;
 import javax.swing.undo.StateEditable;
