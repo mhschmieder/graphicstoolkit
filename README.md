@@ -1,5 +1,6 @@
-# GraphicsToolkit
-The GraphicsToolkit library is an open source project for Java 8 that serves as a small collection of basic utilities and custom classes for stuff that is needed by a lot of AWT oriented code bases.
+# JGraphics
+
+The JGraphics library is an open source project for Java 8 that serves as a small collection of basic utilities and custom classes for stuff that is needed by a lot of AWT oriented graphics code bases.
 
 This library was initially composed mostly of code that supports my EpsToolkit library but which is equally relevant to PDF, SVG, and other graphics file formats that may rely on AWT's Graphics2D class as a redirection of screen painting functions (invoked from the paintComponent() loop) to paper-oriented output.
 
@@ -13,4 +14,4 @@ Eclipse and NetBeans related support files are included as they are generic and 
 
 The Javadocs are 100% compliant and complete, but I am still learning how to publish those at the hosting site that I think is part of Maven Central, as it is a bad idea to bloat a GitHub project with such files and to complicate repository changes (just as with binary files and archices). The Maven POM file now builds the Javadocs and even links them to the source code (as it is open source), but I still need to learn how to freely host these (probably at Maven Central).
 
-As a confidence boost at both ends, GraphicsUtilities has a main() function that prints "Hello Maven from GraphicsToolkit" to the console (e.g. the one in Eclipse IDE). By running Maven's clean task, then the install task, you can quickly gain confidence that everything is integrated properly, by then running the main class and seeing the console and confirming that this library was the source of the validation message.
+As a confidence boost at both ends, GraphicsUtilities has a main() function that prints "Hello Maven from JGraphics" to the console (e.g. the one in Eclipse IDE). By running Maven's clean task, then the install task, you can quickly gain confidence that everything is integrated properly, by then running the main class and seeing the console and confirming that this library was the source of the validation message.
