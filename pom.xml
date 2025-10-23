@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mhschmieder</groupId>
-    <artifactId>graphicstoolkit</artifactId>
+    <artifactId>jgraphics</artifactId>
     <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>graphicstoolkit</name>
-    <url>https://github.com/mhschmieder/graphicstoolkit</url>
+    <name>jgraphics</name>
+    <url>https://github.com/mhschmieder/jgraphics</url>
     <description>Utilities and custom classes for Java Graphics2D.</description>
 
     <licenses>
@@ -21,9 +21,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/mhschmieder/graphicstoolkit</url>
-        <connection>scm:git:git://github.com/mhschmieder/graphicstoolkit.git</connection>
-        <developerConnection>scm:git:git@github.com:mhschmieder/graphicstoolkit.git</developerConnection>
+        <url>https://github.com/mhschmieder/jgraphics</url>
+        <connection>scm:git:git://github.com/mhschmieder/jgraphics.git</connection>
+        <developerConnection>scm:git:git@github.com:mhschmieder/jgraphics.git</developerConnection>
     </scm>
 
     <developers>
